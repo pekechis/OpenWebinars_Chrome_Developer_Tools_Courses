@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo del Console API</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <section class="col-4 mt-5">
+                <form>
+                    <div class="form-group">
+                        <label for="usuario">Usuario</label>
+                        <input class="form-control" id="usuario" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input class="form-control" type="password" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <input onclick="checkValues()" class="btn btn-primary w-100 mt-2" type="button" value="Entrar">
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+    <script>
+        
+        //SIMPLES MENSAJES DE ERROR
+        console.log("LOG");
+        console.error("ERROR");
+        console.warn("WARNING");
+        console.info("INFO");
+        console.debug("DEBUG");
+
+        
+        //MENSAJES AGRUPADOS Y COLAPSADOS DE INICIO
+        console.groupCollapsed("GRUPO DE MENSAJES");
+        for (let index = 0; index < 10; index++) {
+            console.log("El valor es "+index);            
+        }
+        //CIERRO LA AGRUPACIÓN
+        console.groupEnd("GRUPO DE MENSAJES");
+
+        //MUESTRA ELEMENTOS EN FORMA DE TABLA
+        console.table(document.getElementsByClassName("form-control"));
+
+        //MUESTRA NODOS EN FORMATO JSON
+        console.dir(document.getElementById('usuario'));
+
+        //MUESTRA NODOS EN FORMATO XML
+        console.dirxml(document.getElementById('usuario'));
+
+        
+        
+        function checkValues() {
+            let user = document.getElementById('usuario').value;
+            let output = "No es el usuario admin";
+            let admin = "admin";
+            
+            //SI NO SE CUMPLE LA CONDICIÓN ASSERT NOS MUESTRA UN ERROR
+            console.assert(user ==  admin , { user ,admin, output});
+            
+            //SE NOS MUESTRA LA PILA DE LLAMADAS
+            console.trace();
+        }
+    </script>
+</body>
+
+</html>

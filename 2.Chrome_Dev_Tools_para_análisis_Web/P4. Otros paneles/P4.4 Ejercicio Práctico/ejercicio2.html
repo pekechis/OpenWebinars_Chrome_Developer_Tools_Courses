@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJEMPLO </title>
+</head>
+<body>
+    <h1>CONSUMO DE MEMORIA. EJERCICIO 2</h1>
+    <button id="creaElementos">CREAR ELEMENTOS</button>
+    <div id="elementos">
+        
+    </div>
+    <script>
+        let x = [];
+
+        function addElements() {
+           x.push(new Array(1000000).join('x'));
+        }
+
+        document.getElementById('creaElementos').addEventListener('click',addElements);
+
+
+    </script>
+</body>
+</html>
