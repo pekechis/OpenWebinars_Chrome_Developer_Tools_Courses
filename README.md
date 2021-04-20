@@ -1,4 +1,4 @@
-# OpenWebinras_Chrome_Developer_Tools_Courses
+# OpenWebinars_Chrome_Developer_Tools_Courses
 
 Materiales desarrollados para @openwebinars. El conjunto está formado por dos cursos:
 
